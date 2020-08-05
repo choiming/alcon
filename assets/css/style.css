@@ -1,0 +1,246 @@
+charset "utf-8";
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 100;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 300;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 400;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 500;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 700;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 900;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format('opentype');}
+
+body { font-family: 'Noto Sans KR',sans-serif; }
+
+.container {
+    position:relative;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/*헤더 레이아웃*/
+#header{
+    background: url('../img/back.jpg') center top repeat-x;
+    background-size: cover;
+}
+
+/*로우 영역*/
+.row { padding-top: 3.0rem; }
+
+/*헤더 로고네비*/
+.header .logo { float: left; }
+.header .nav { float: right; }
+.header .nav + .bgc { position: absolute; right: 0; top: 7.9rem; width: 59%; height: 0; transition: all 0.5s; opacity: 0; background-color: #e3f2ff; z-index: 1; }
+.header .nav:hover + .bgc { height: 23rem; opacity: 1; }
+.header .nav > ul { text-align: center; height: 5rem; overflow: hidden; z-index: 30; }
+.header .nav > ul:hover { overflow: visible; }
+
+.header .nav > ul:hover ul { opacity: 1; transition: all 0.5s; }
+.header .nav > ul > li { display: inline-block; position: relative; z-index: 30; }
+.header .nav > ul > li > a { display: block; position: relative;
+    width: 14rem; height: 4.9rem; line-height: 4.9rem; font-size: 2.0rem; font-weight: 300; color: white; padding-bottom: 0; z-index: 30; }
+.header .nav > ul > li > a:after { content: ''; position: absolute; left: 50%; bottom: 0; width: 0; height: 0.2rem; background: #1f5d86; transition: all 0.5s; }
+.header .nav > ul > li:hover > a:after { width: 100%; left: 0; }
+.header .nav > ul ul { position: absolute; width: 100%; height: 19rem; padding: 2.2rem 0 0; opacity: 0; }
+.header .nav > ul ul.colorwhite { background-color: #fff; opacity: 0; transition: all 0.5s; height: 0;}
+.header .nav > ul:hover ul.colorwhite { background-color: #fff; opacity: 1; height: 20.8rem; }
+.header .nav > ul ul li { line-height: 4.5rem; }
+.header .nav > ul ul a { font-size: 1.4rem; color: #828282; }
+.header .nav > ul ul a:hover { color: #205f88; font-weight: 600; }
+
+/*에어렌즈 메인 텍스트*/
+.air_main .air_top {
+    text-align:center;
+    color: white;
+    padding-top: 16rem;
+}
+.air_main .air_top h3 { font-size: 3.6rem; font-weight: 100; line-height: 5.3rem; }
+.air_main .air_top h2 { font-size: 6.2rem; font-weight: 100; letter-spacing: 1.8rem; }
+
+/*에어렌즈 메인 이미지*/
+.air_middle { height: 37.0rem; }
+.air_middle .label h4 { 
+    font-size: 2.0rem; 
+    font-weight: 300; 
+    color: white;
+    display: inline-block;
+    text-align: center;
+}
+.air_middle .label{ 
+    border-radius: 100%; 
+    -moz-border-radius: 100%; 
+    -webkit-border-radius: 100%; 
+    -ms-border-radius: 100%; 
+    -o-border-radius: 100%; 
+    behavior: url("../js/PIE.htc"); /*익스플로러 radius*/
+    
+    background-color: rgb(56,116,193); 
+    border: 1px solid rgb(56,116,193,0.8);
+    opacity: 90%;
+    width: 12.5rem;
+    height: 12.5rem; 
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 75.5rem;
+    box-shadow: -3px -0px 5px rgb(0,0,0,0.4);
+}
+
+.air_middle .air_img { 
+    text-align:center; 
+    padding-top: 6.3rem;
+}
+
+/*에어렌즈 메인 바텀*/
+.air_bottom { text-align: center; }
+.air_bottom ul li { 
+    display: inline;
+    font-size: 1.8rem;
+    color: rgb(36,84,151);
+    margin: 0 3.0rem;
+}
+.air_bottom ul li img {
+    margin-right: 0.8rem
+}
+.air_bottom .scroll {
+    padding: 3.7rem 0 5.0rem 0;
+}
+
+/*에어렌즈 광고부분*/
+.AD { padding: 7.0rem 0; position: relative; }
+.AD h3 { font-size: 2.4rem; font-weight: 700; margin-bottom: 1.7rem; letter-spacing: -0.1rem; }
+.AD .AD_left { 
+    position: relative; margin-right: 42.3rem; height: 50.0rem; 
+    background: #ccc url('../img/AD.jpg') center center; 
+    background-size: cover;
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    -ms-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    -o-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+.AD .AD_left .play { 
+    position: absolute; top:50%; left: 50%; transform: translate(-50%, -50%); 
+}
+.AD .icon-youtube-play { font-size: 9.0rem; color:rgb(0,0,0,0.6); cursor: pointer; }
+
+.AD .AD_right { 
+    position: absolute; right: 0; top: 11.0rem;
+    width: 40.0rem; height: 50.0rem; color: #fafafa; letter-spacing: -0.2rem;
+}
+.AD .AD_right .hash { font-weight: 600; letter-spacing: -0.1rem; font-size: 1.8rem; }
+.AD .AD_right .AD_top { height: 25.0rem; background-color: #fdb04a; padding: 5.0rem; 
+    box-sizing: border-box; }
+.AD .title { 
+    font-size: 3.0rem; font-weight: 400; margin: 2.5rem 0 2.5rem 0; line-height: 3.6rem; }
+.AD .hashtag { font-size: 1.7rem; font-weight: 500; }
+.AD .AD_right .AD_top h5 { color: rgb(217,73,23); font-size: 2.2rem; }
+.AD .AD_right .AD_bottom { height: 25.0rem; background-color: #975cc6; padding: 5.0rem;
+    box-sizing: border-box; }
+.AD .AD_right .AD_bottom { background-image: url('../img/AD_bottom.png'); background-repeat: no-repeat; background-position: right bottom; }
+
+/*올바른 팁*/
+.TIP h4 { margin-bottom: 4.0rem; font-size: 3.3rem; letter-spacing: -0.1rem; line-height: 2.5rem; text-align: center; }
+.TIP h4 span { font-size: 3.3rem; font-weight: 200; letter-spacing: -0.2rem; }
+.italic { font-style: italic; }
+.TIP .alltip {
+    position: relative;
+    display: flex;
+    display: -ms-flexbox;
+    -ms-flex-pack: justify;
+    justify-content: space-around;
+}
+.TIP .alltip:after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 0.2rem;
+    background-color: #ccc;
+    z-index: -10;
+}
+.TIP .alltip li { color: #828282; font-size: 1.6rem; }
+.TIP .alltip li:before { 
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px solid #535353;
+    border-radius: 50%;
+    display: block;
+    cursor: pointer;
+    background-color: #fff;
+    content: '';
+    box-sizing: border-box;
+    margin: -0.7rem auto 1.0rem auto;
+} 
+.contentGroup { 
+    position: relative; display: flex;
+    justify-content: space-around;
+    text-align: center; padding-top: 2.0rem;
+}
+.contentGroup a { width: 25%; min-height: 30.0rem; }
+.contentGroup a:hover { background-color: #f6f6f6; border-radius: 50%; transform: scale(1.05); }
+.contentGroup a .content { margin-top: 6.0rem; }
+.contentGroup a .content dt { margin-bottom: 0.8rem; }
+.contentGroup a .content dd { font-size: 1.7rem; letter-spacing: -0.05rem; line-height: 2.4rem; color: #343434; }
+
+/*후레쉬룩*/
+.freshlook { margin: 6.0rem 0; width: 100%; height: 10.5rem; background: url('../img/freshlook.jpg') no-repeat center #b5d6dd; }
+
+/*알콘 소식*/
+#news { margin-bottom: 7.0rem; }
+.news { text-align: center; letter-spacing: -0.05rem; }
+.news h3 { font-size: 3.0rem; font-weight: bold; letter-spacing: -0.1rem; }
+.news p { display: block; font-size: 1.8rem; color: #676767; margin: 1.5rem 0 3.8rem; }
+.news p .italic { font-size: 1.9rem; }
+.news .news_cont { overflow: hidden; float:left; width: 49%; height: 28.0rem; margin-bottom: 3.6rem; margin-right: 2%; }
+.news .mr0 { margin-right: 0; }
+.news .news_cont .contimg { float: left; width: 50%; height: inherit; }
+.news .news_cont .leader { background: url('../img/contimg01.jpg') no-repeat; background-size: cover; }
+.news .news_cont .better { background: url('../img/contimg02.jpg') no-repeat; background-size: cover; }
+
+.news .news_cont .conttxt { 
+    float: left; width: 50%; padding: 6.5rem 0 4.0rem 0; 
+    background-image: linear-gradient(to right, #2b8ecf, #52b7fb); 
+    height: inherit; box-sizing: border-box;
+}
+.news .news_cont .bg_green { background-image: linear-gradient(to right, #699619, #88b648); }
+.news .news_cont .conttxt strong { 
+    display: block; margin-bottom: 1.3rem;
+    font-size: 2.1rem; color: #fff; font-weight: 600;
+    letter-spacing: -0.08rem;
+}
+.news .news_cont .conttxt p { font-size: 1.6rem; color: rgba(255,255,255,0.8); margin: 0; line-height: 1.5; }
+.news .news_cont .conttxt .conttxt_btn { 
+    display: block; width: 9.0rem; padding: 1.2rem 2.0rem; font-size: 1.4rem; 
+    background: #064ca2; color: #fff;  border-radius: 0.5rem; margin: 2.0rem auto 0; }
+.news .news_cont .bg_green .conttxt_btn { background: #237e0e; }
+
+.news .news02 { text-align: left; }
+.news .news02 .conttit {  }
+.news .news02 .conttit b { font-size: 2.2rem; color: #474747; }
+.news .news02 .conttit p.mroe { float: right; margin-bottom: 1.5rem; margin-top: 0; font-size: 1.5rem; color: #949494; vertical-align: top; }
+.news .news02 .conttit p.mroe a { display: block; padding: 0.8rem 2.0rem; border: 2px solid #e5e5e5; border-radius: 0.5rem; }
+.news .news02 .conttit p.mroe a img { display: inline-block; padding-left: 1.0rem; }
+.news .news02 .contevent img { border: 1px solid #d7d7d7; max-width:99%; }
+.news .news02 .contshop { border-top: 2px solid #000; padding-top: 1.8rem; }
+.news .news02 .contshop img { display: inline-block; max-width: 98%; }
+.news .news02 .contshop .shopfind { display: inline-block; vertical-align: top; margin: 1.5rem 5.0rem; }
+.news .news02 .contshop .shopfind strong { 
+    display: inline-block;
+    position: relative; font-size: 2.2rem; color: #474747; margin-bottom: 3.5rem; }
+.news .news02 .contshop .shopfind strong:after { content: ''; position: absolute; top: 4.0rem; left:0; width: 4.4rem; height: 0.2rem; background-color: #cfcfcf; }
+.news .news02 .contshop .shopfind p { margin: 0; line-height: 1.3; }
+.news .news02 .contshop .shopfind span.newshop { display: inline-block; margin-top: 2.0rem; font-size: 1.6rem; color: #676767; }
+
+/*푸터*/
+footer { background-color: #f3f3f3; }
+.footer { padding: 55px 0; color: #949494; }
+.footer_left { float: left; width: 25%; }
+.footer_left span { font-size: 3.0rem; font-weight: 600; }
+.footer_left b.number { display: block; font-weight: 500; font-size: 4.0rem; letter-spacing: -0.05rem; margin: 0.6rem 0; }
+.footer_left b { font-size: 1.5rem; letter-spacing: -0.045rem; font-weight: normal; }
+.footer_right { float: left; width: 75%; font-size: 1.7rem; }
+.footer_right p { margin-bottom: 0.7rem; font-size: 1.8rem; }
+.footer_right p.mt { margin-top: 3.2rem; }
+
